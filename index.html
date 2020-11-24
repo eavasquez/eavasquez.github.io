@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+
+        <title>Calculadora de Boletas</title>
+    </head>
+
+    <body>
+        <script src ='js/validarSoloNUmeros.js'> </script>
+        <script src ='js/calculo.js'> </script>
+        <script src ='js/numerosEnMiles.js'> </script>
+        <script src ='js/formatear.js'></script>
+
+
+
+        <style>
+            body {
+              background-image: url('img/fondo.png');
+            }
+        </style>
+
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                        <br><br><h2 class="text-center"> Calcula tu boleta</h2>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4">
+
+                </div>
+                <div class="col-md-4">
+                    <form >                           
+                        Monto $<input class ="form-control" type="text" id="txtmonto" onkeyup="calculoMontos();" onkeypress="return validarSoloNumeros(event);">
+                    </form>
+                </div>
+                <div class="col-md-4">
+
+                </div>
+            </div><br>
+
+
+            <div class="row">
+                <div class="col-md-4">
+                    Pactado como monto liquido $<input class="form-control" type="text" id="txtpactadoliquido" readonly >
+                </div>
+
+                <div class="col-md-4">
+                    Retencion $<input class="form-control" type="text" id="txtretencionliquido" readonly >
+                </div>
+
+                <div class="col-md-4">
+                    A pagar $<input class="form-control" type="text" id="txtapagarliquido" readonly>
+                </div>                
+            </div><br>
+
+            <div class="row">
+                <div class="col-md-4">
+                    Pactado como monto bruto  $<input class="form-control" type="text" id="txtpactadobruto" readonly>
+                </div>
+
+                <div class="col-md-4">
+                    Retencion $<input class="form-control" type="text" id="txtretencionbruto" readonly>
+                </div>
+
+                <div class="col-md-4">
+                    A pagar $<input class="form-control" type="text" id="txtapagarbruto" readonly>
+                </div>
+            </div><br><br>
+
+            <div class="row">
+                <div class="col-md-4">
+
+                </div>
+
+                <div class="col-md-4">
+                    <button type="reset" class="btn btn btn-dark btn-lg btn-block" onclick="
+                    document.getElementById('txtmonto').value               =   '';
+                    document.getElementById('txtpactadoliquido').value      =   '';
+                    document.getElementById('txtretencionliquido').value    =   '';
+                    document.getElementById('txtapagarliquido').value       =   '';
+                
+                    document.getElementById('txtpactadobruto').value        =   '';
+                    document.getElementById('txtretencionbruto').value      =   '';
+                    document.getElementById('txtapagarbruto').value         =   '';">Limpiar Monto</button>
+                </div>
+
+                <div class="col-md-4">
+ 
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
